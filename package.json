@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.5",
-    "calenda": "^1.0.4"
+    "bootstrap": "^5.3.5"
   }
 }

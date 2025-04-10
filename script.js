@@ -43,7 +43,7 @@ let questions = [
 
 let rightQuestions = 0;
 let currentQuestion = 0;
-let AUDIO_SUCCESS = new Audio("audio/succes.mp3");
+let AUDIO_SUCCESS = new Audio("audio/success.mp3");
 let AUDIO_FAIL = new Audio("audio/fail.mp3");
 
 function init() {
@@ -97,7 +97,7 @@ function answer(selection) {
   let selectedQuestionNumber = selection.slice(-1);
   let idOfRightAnswer = `answer_${question["right_answer"]}`;
 
-  if (rightAnswerSelected(selectedQuestionNumber)) {
+  if (rightAnswerSelected(selectedQuestionNumber, question)) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
     AUDIO_SUCCESS.play();
     rightQuestions++;
@@ -111,8 +111,8 @@ function answer(selection) {
   document.getElementById("next-button").disabled = false;
 }
 
-function rightAnswerSelected(selectedQuestionNumber){
-  return selectedQuestionNumber == questions["right_answer"];
+function rightAnswerSelected(selectedQuestionNumber, question){
+  return selectedQuestionNumber == question["right_answer"];
 }
 
 function nextQuestion() {
